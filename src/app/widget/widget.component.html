@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+    });
+</script>
+<div>
+    <a class="float" id="menu-share">
+        <i class="fa fa-question my-float"></i>
+    </a>
+
+    <ul>
+        <li>
+            <a (click)="navigateTo()" data-toggle="tooltip" title="About">
+                <i class="fa fa-info my-float"></i>
+            </a>
+        </li>
+        <li>
+            <a (click)="openFeedbackWindow()" data-toggle="tooltip" title="Submit Feedback">
+                <i class="fa fa-thumbs-up my-float"></i>
+            </a>
+        </li>
+        <li>
+            <a data-toggle="tooltip" title="Report Bug" (click)="openReportWindow()">
+                <i class="fa fa-bug my-float"></i>
+            </a>
+        </li>
+    </ul>
+</div>

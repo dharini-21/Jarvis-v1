@@ -1,0 +1,30 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Submit Feedback</h4>
+</div>
+<div class="modal-body">
+  <mat-form-field>
+    <mat-label>Email ID</mat-label>
+    <input matInput [(ngModel)]="emailId" placeholder="abc@example.com">
+    
+    <mat-hint>*Required</mat-hint>
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Comments</mat-label>
+    <textarea style="resize:none" matInput [(ngModel)]="comments"></textarea>
+  </mat-form-field>
+  <br/>
+  <mat-label style="font-family: Arial, Helvetica, sans-serif;font-size: inherit;">Add Rating</mat-label>
+  <div class='rating-bar'>
+    <button mat-icon-button color="{{color}}" *ngFor="let ratingId of ratingArr;index as i" [id]="'star_'+i" (click)="onClick(i+1)" [matTooltip]="comment(i)" matTooltipPosition="above">
+      <mat-icon>
+        {{showIcon(i)}}
+      </mat-icon>
+    </button>
+  </div>
+</div>
+<div class="modal-footer">
+  <button mat-button (click)="submitFeedback()">Submit</button>
+  <button mat-button mat-dialog-close (click)="closeClick()">Cancel</button>
+</div>
